@@ -65,7 +65,30 @@
             color: var(--primary-dark);
             text-decoration: none;
             letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
         }
+
+        .nav-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--primary-accent);
+            transition: transform 0.3s ease;
+        }
+
+        .nav-logo:hover .nav-avatar { transform: scale(1.08); }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .about-image { overflow: hidden; }
 
         .nav-menu {
             display: flex;
@@ -888,7 +911,11 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#home" class="nav-logo">HM</a>
+            <a href="#home" class="nav-logo">
+                <img src="photo_profil.jpg" alt="Henri Moulga" class="nav-avatar"
+                     onerror="this.remove()">
+                <span>HM</span>
+            </a>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -957,7 +984,10 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content fade-in">
                 <div class="about-side">
-                    <div class="about-image">HM</div>
+                    <div class="about-image">
+                        <img src="photo_profil.jpg" alt="Portrait of Henri Moulga"
+                             onerror="this.parentElement.textContent='HM'">
+                    </div>
                     <a href="CV_Henri_Moulga.pdf" download class="btn btn-primary">
                         <svg><use href="#icon-download"/></svg> Download CV (PDF)
                     </a>
